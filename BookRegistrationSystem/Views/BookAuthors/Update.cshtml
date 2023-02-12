@@ -1,0 +1,33 @@
+﻿@model BookAuthors
+@{
+    ViewData["Title"] = "Update";
+}
+
+<h1>Update</h1>
+
+<div class="container mt-5">
+    <form method="post" asp-action="update">
+        <div class="row">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="col-4">
+                <div class="form-group">
+                    <label asp-for="@Model.BookId" class="control-label"></label>
+                    <input asp-for="@Model.BookId" class="form-control" />
+                    <span asp-validation-for="@Model.BookId" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="form-group">
+                    <label asp-for="@Model.AuthorId" class="control-label"></label>
+                    <input asp-for="@Model.AuthorId" class="form-control" />
+                    <span asp-validation-for="@Model.AuthorId" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group mt-3 text-end">
+                <a class="btn btn-info" asp-area="" asp-controller="BookAuthors" asp-action="Index"><i class="bi bi-arrow-return-left"></i> Back to main</a>
+                <input type="submit" value="Update" class="btn btn-warning" />
+            </div>
+        </div>
+    </form>
+
+</div>
